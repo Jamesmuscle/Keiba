@@ -18,8 +18,11 @@
   body { font-family: 'Noto Sans JP', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; font-size: 17px; line-height: 1.8; }
 
   header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 0 32px; display: flex; align-items: center; justify-content: space-between; height: 68px; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 8px rgba(0,0,0,0.05); }
-  .logo { font-family: 'Noto Serif JP', serif; font-size: 24px; font-weight: 700; color: var(--accent); display: flex; align-items: center; gap: 8px; }
+  .logo { font-family: 'Noto Serif JP', serif; font-size: 24px; font-weight: 700; color: var(--accent); display: flex; align-items: center; gap: 8px; text-decoration: none; }
   .header-sub { font-size: 13px; color: var(--text-sub); }
+  nav { display: flex; align-items: center; gap: 24px; }
+  nav a { font-size: 13px; color: var(--text-sub); text-decoration: none; transition: color 0.15s; }
+  nav a:hover { color: var(--accent); }
 
   .ad-banner { background: var(--surface); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: center; height: 90px; }
   .ad-placeholder { width: 728px; max-width: calc(100% - 32px); height: 90px; background: var(--surface2); border: 1px dashed var(--border); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: var(--text-sub); font-size: 13px; }
@@ -194,7 +197,10 @@
 </div>
 
 <footer>
-  ウマ計算 ― 競馬払戻金計算機 ｜ <a href="privacy.html" style="color:var(--text-sub);text-decoration:underline;">プライバシーポリシー</a><br>
+  ウマ計算 ― 競馬払戻金計算機 ｜
+  <a href="about.html" style="color:var(--text-sub);text-decoration:underline;">運営者情報</a> ｜
+  <a href="privacy.html" style="color:var(--text-sub);text-decoration:underline;">プライバシーポリシー</a> ｜
+  <a href="contact.html" style="color:var(--text-sub);text-decoration:underline;">お問い合わせ</a><br>
   ※ 本サービスの計算結果はあくまで目安です。実際の払戻金はJRAの発表をご確認ください。<br>
   競馬は20歳になってから。のめりこみに注意しましょう。
 </footer>

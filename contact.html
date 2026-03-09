@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お問い合わせ | ウマ計算</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5133484450893142" crossorigin="anonymous"></script>
+<style>
+  :root {
+    --bg: #f7f5f0; --surface: #ffffff; --surface2: #f0ece3;
+    --border: #e0d8cc; --text: #1a1410; --text-sub: #7a6e62;
+    --accent: #2d6a2d; --accent-light: #e8f2e8; --accent-border: #b8d8b8;
+    --radius: 12px; --shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.9; }
+
+  header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 0 32px; display: flex; align-items: center; justify-content: space-between; height: 68px; box-shadow: 0 1px 8px rgba(0,0,0,0.05); }
+  .logo { font-family: 'Noto Serif JP', serif; font-size: 24px; font-weight: 700; color: var(--accent); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+  .header-sub { font-size: 13px; color: var(--text-sub); }
+
+  .container { max-width: 680px; margin: 0 auto; padding: 48px 28px; }
+  h1 { font-family: 'Noto Serif JP', serif; font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+  .subtitle { font-size: 15px; color: var(--text-sub); margin-bottom: 36px; }
+
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px; box-shadow: var(--shadow); }
+
+  .field { margin-bottom: 22px; }
+  label { display: block; font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+  .required { display: inline-block; font-size: 10px; background: #fce4e4; color: #8b2020; border-radius: 4px; padding: 1px 6px; margin-left: 6px; vertical-align: middle; }
+  input[type="text"], input[type="email"], textarea {
+    width: 100%; padding: 12px 14px; border: 1.5px solid var(--border); border-radius: 8px;
+    font-family: 'Noto Sans JP', sans-serif; font-size: 15px; background: var(--surface);
+    color: var(--text); outline: none; transition: border-color 0.15s;
+  }
+  input:focus, textarea:focus { border-color: var(--accent); }
+  textarea { resize: vertical; min-height: 140px; line-height: 1.7; }
+
+  .submit-btn { width: 100%; padding: 15px; background: var(--accent); color: #fff; border: none; border-radius: 9px; font-family: 'Noto Serif JP', serif; font-size: 17px; font-weight: 700; cursor: pointer; transition: all 0.15s; letter-spacing: 0.05em; margin-top: 8px; }
+  .submit-btn:hover { background: #235a23; box-shadow: 0 4px 16px rgba(45,106,45,0.25); }
+  .submit-btn:active { transform: translateY(1px); }
+
+  .note { font-size: 12px; color: var(--text-sub); margin-top: 16px; line-height: 1.7; text-align: center; }
+
+  .success-msg { display: none; background: var(--accent-light); border: 1px solid var(--accent-border); border-radius: 10px; padding: 24px; text-align: center; }
+  .success-msg .icon { font-size: 36px; margin-bottom: 10px; }
+  .success-msg h2 { font-family: 'Noto Serif JP', serif; font-size: 20px; font-weight: 700; color: var(--accent); margin-bottom: 8px; }
+  .success-msg p { font-size: 14px; color: var(--text-sub); }
+
+  .back-btn { display: inline-flex; align-items: center; gap: 6px; margin-top: 36px; padding: 10px 20px; background: var(--surface); border: 1.5px solid var(--border); border-radius: 8px; color: var(--text-sub); font-size: 14px; text-decoration: none; transition: all 0.15s; }
+  .back-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+
+  footer { background: var(--surface); border-top: 1px solid var(--border); padding: 20px; text-align: center; font-size: 12px; color: var(--text-sub); margin-top: 48px; line-height: 2; }
+  footer a { color: var(--text-sub); }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">🏇 ウマ計算</a>
+  <div class="header-sub">競馬払戻金計算機</div>
+</header>
+
+<div class="container">
+  <h1>お問い合わせ</h1>
+  <p class="subtitle">ご質問・ご意見・不具合報告などはこちらからお送りください。</p>
+
+  <div class="card">
+    <div id="formArea">
+      <div class="field">
+        <label>お名前 <span class="required">必須</span></label>
+        <input type="text" id="name" placeholder="例：山田 太郎">
+      </div>
+      <div class="field">
+        <label>メールアドレス <span class="required">必須</span></label>
+        <input type="email" id="email" placeholder="例：example@email.com">
+      </div>
+      <div class="field">
+        <label>お問い合わせ内容 <span class="required">必須</span></label>
+        <textarea id="message" placeholder="ご質問・ご意見・不具合の内容などをご記入ください。"></textarea>
+      </div>
+      <button class="submit-btn" onclick="submitForm()">送信する</button>
+      <p class="note">※ 返信まで数日かかる場合があります。</p>
+    </div>
+
+    <div class="success-msg" id="successMsg">
+      <div class="icon">✅</div>
+      <h2>送信が完了しました</h2>
+      <p>お問い合わせありがとうございます。<br>内容を確認の上、ご返信いたします。</p>
+    </div>
+  </div>
+
+  <a href="index.html" class="back-btn">← 計算機に戻る</a>
+</div>
+
+<footer>
+  ウマ計算 ― 競馬払戻金計算機 ｜
+  <a href="about.html">運営者情報</a> ｜
+  <a href="privacy.html">プライバシーポリシー</a> ｜
+  <a href="contact.html">お問い合わせ</a><br>
+  競馬は20歳になってから。のめりこみに注意しましょう。
+</footer>
+
+<script>
+function submitForm() {
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const message = document.getElementById('message').value.trim();
+
+  if (!name) { alert('お名前を入力してください。'); return; }
+  if (!email || !email.includes('@')) { alert('正しいメールアドレスを入力してください。'); return; }
+  if (!message) { alert('お問い合わせ内容を入力してください。'); return; }
+
+  // フォーム送信完了表示（実際の送信はFormspreeなどのサービスと連携して実装可能）
+  document.getElementById('formArea').style.display = 'none';
+  document.getElementById('successMsg').style.display = 'block';
+}
+</script>
+</body>
+</html>
